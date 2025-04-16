@@ -4,3 +4,9 @@
 
 [build.environment]
   NETLIFY = "true"
+
+# 处理SPA路由
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
