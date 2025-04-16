@@ -14,10 +14,13 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "vitepress": "^1.0.0-rc.45"
+    "vitepress": "^1.0.0-rc.45",
+    "vue": "^3.4.0",
+    "@vueuse/core": "...",
+    "@vueuse/shared": "..."
   },
   "devDependencies": {
-    "vue": "3.2.44",
+    "vue": "^3.4.0",
     "vitepress": "1.0.0-alpha.28"
   },
   "pnpm": {

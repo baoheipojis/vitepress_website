@@ -12,6 +12,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about' },
+      { text: 'Blog', link: '/blog/' }, // Link to the blog index page (we'll create this next)
       { text: 'Contact', link: '/contact' }
     ]
   }
