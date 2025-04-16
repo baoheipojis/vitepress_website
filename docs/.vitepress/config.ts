@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 // 根据环境变量确定base路径
-const base = process.env.NETLIFY === 'true' ? '/' : '/vitepress_website/'
+const base =  '/vitepress_website/'
 
 // https://vitepress.vuejs.org/config/app-configs
 export default defineConfig({
