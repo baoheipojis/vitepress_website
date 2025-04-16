@@ -2,7 +2,7 @@ name: Deploy VitePress
 
 on:
   push:
-    branches: [ main ] # 触发分支根据你的实际情况修改
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -12,22 +12,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # 需要获取所有 git 历史记录
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build Project
-        run: npm run build # 确保 package.json 中有 build 命令
+        run: npm run build
+        
+      - name: Debug output directory
+        run: ls -la ./docs/.vitepress/dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/.vitepress/dist # VitePress 默认输出目录
-        #   cname: yourdomain.com # 如果使用自定义域名需要此项
+          publish_dir: ./docs/.vitepress/dist
+          force_orphan: true # Creates a single commit with latest changes
