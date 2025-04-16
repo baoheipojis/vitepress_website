@@ -1,0 +1,6 @@
+[build]
+  publish = "docs/.vitepress/dist"
+  command = "npm run docs:build"
+
+[build.environment]
+  NETLIFY = "true"
